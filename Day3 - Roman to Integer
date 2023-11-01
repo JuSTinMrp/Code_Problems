@@ -1,0 +1,33 @@
+class Solution(object):
+    def romanToInt(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        sing = {}
+        sing["I"] = 1
+        sing["V"] = 5
+        sing["X"] = 10
+        sing["L"] = 50
+        sing["C"] = 100
+        sing["D"] = 500
+        sing["M"] = 1000
+
+        comb = {}
+        comb["IV"] = 4
+        comb["IX"] = 9
+        comb["XL"] = 40
+        comb["XC"] = 90
+        comb["CD"] = 400
+        comb["CM"] = 900
+
+        num = 0
+        letter = 0
+        while letter < len(s):
+            if letter < len(s) - 1 and s[letter] + s[letter + 1] in comb:
+                num += comb[s[letter] + s[letter + 1]]
+                letter += 2
+            else:
+                num += sing[s[letter]]
+                letter += 1
+        return num
