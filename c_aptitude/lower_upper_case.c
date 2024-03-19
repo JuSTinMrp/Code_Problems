@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include<strings.h>
 #include <ctype.h>
-                            // +32 to lower     a-z => 97 to 12
+                            // +32 to lower     a-z => 97 to 122
                             // -32 to upper     A-Z => 65 to 90
 int main(){
     char s[50];
